@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 1480903042
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bd2282e0807ea11d6fa03167260ebd4f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ca637ba5617d79359be14e488ee64d4d
+HashAppended: 0
+ClassTypes:
+- Class: 84
+  Script: {instanceID: 0}
+Assets:
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/TV/Materials/TV_Camera.renderTexture
+- Assets/com.tsinghua.iotvrp/Scenes/Materials/CameraItem.renderTexture
+Dependencies: []

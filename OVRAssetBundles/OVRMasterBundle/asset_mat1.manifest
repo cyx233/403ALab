@@ -1,0 +1,39 @@
+ManifestFileVersion: 0
+CRC: 3396948642
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3686aeb64608a79224ebc674cb7e3743
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 22357172b8cea85847937e8f62d0c077
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Materials/MRTK_Occlusion.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/Camera/Materials/Box.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/Materials/wood_1.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Meshes/Cursors/Materials/Light.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Materials/MRTK_GrabPointerGrabPoint.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/Materials/wood_2.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/DoorPackFree/Meshes/Door001/Materials/13
+  - Default.mat
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Materials/MRTK_Standard_Yellow.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Materials/HandJoint.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Materials/Teleport/TeleportBase.mat
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Materials/MRTK_Standard_Blue.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Materials/Teleport/TeleportMid.mat
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Materials/MRTK_Standard_TransparentCyan.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/Materials/wood_4.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/Camera/Materials/SwivelMount.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/Materials/base_material.mat
+Dependencies:
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_jpg0
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_png0
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_shader0

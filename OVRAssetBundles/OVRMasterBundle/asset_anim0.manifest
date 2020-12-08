@@ -1,0 +1,30 @@
+ManifestFileVersion: 0
+CRC: 4260607906
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5e64b12b2d490af7d5da3a48330b47fe
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: af57576da81d5d3ce45807ac11234de6
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+Assets:
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/TeleportCursor/TeleportValid.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/DefaultCursor/Contextual/DefaultCursorRotateVertical.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/DefaultCursor/Contextual/DefaultCursorMoveEastWest.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/TeleportCursor/TeleportCursorDisabled.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/DefaultCursor/Contextual/DefaultCursorMoveNorthSouth.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/TeleportCursor/TeleportInvalid.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/DefaultCursor/Contextual/DefaultCursorMoveNortheastSouthwest.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/TeleportCursor/TeleportIdle.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/DefaultCursor/DefaultCursorPressedAnim.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/DefaultCursor/DefaultCursorIdleAnim.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/DefaultCursor/Contextual/DefaultCursorMoveCross.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/DefaultCursor/Contextual/DefaultCursorRotateHorizontal.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/DefaultCursor/Contextual/DefaultCursorNoContext.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/DefaultCursor/Contextual/DefaultCursorMoveNorthwestSoutheast.anim
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/DefaultCursor/DefaultCursorIdleRingAnim.anim
+Dependencies: []

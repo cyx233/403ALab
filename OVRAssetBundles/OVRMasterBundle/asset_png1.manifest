@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 3856417306
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 72aec08d96e092a700eef1eb74afb0c1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7859cd501ea75098bcf7e53f1b477c26
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+Assets:
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Textures/IconShow.png
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Textures/IconCamera.png
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Textures/IridescentSpectrum.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/TV/textures/texture_tv_spec.png
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Textures/IconPin.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/Camera/Materials/Camera_SwivelMount_Normal.png
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Textures/IconSearch.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/Camera/Materials/Camera_BoxLens_AlbedoTransparency.png
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Textures/IconHandRay.png
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Textures/IconHandMesh.png
+Dependencies: []

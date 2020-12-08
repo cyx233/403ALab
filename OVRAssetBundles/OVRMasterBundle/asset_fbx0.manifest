@@ -1,0 +1,58 @@
+ManifestFileVersion: 0
+CRC: 3232627294
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b08e72f84d865d92eac880b8d351f71e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3c831659204dc4c5bde96d5c5f627bb7
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Meshes/Sliders/Volumetric_UI_Components.fbx
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Meshes/Cursors/Cursor_Rest_geo.fbx
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/TV/model/TVset.FBX
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/torchere_3.FBX
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/chair_2.FBX
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Models/MRTK_FingerTipCursor.fbx
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/modular_kitchen_table_1.FBX
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Meshes/Cursors/TeleportCursor.fbx
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Meshes/Cursors/Cursor_MoveArrows_geo.fbx
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Meshes/Cursors/Cursor_Press_geo.fbx
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/DoorPackFree/Meshes/Door001/Door001.FBX
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Meshes/Cursors/Cursor_RotateArrows_geo.fbx
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Controllers/DebugControllers/Models/GizmoLeft.fbx
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/bed_1.FBX
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/table_2.FBX
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/torchere_4.FBX
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Controllers/DebugControllers/Models/GizmoRight.fbx
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Ciconia Studio/Shaders/Standard
+  Shaders/BuiltIn/Demo Scene/Sources/Models/Fence/Fence(1side).FBX
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Meshes/Cursors/Cursor_Focus_geo.fbx
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/Camera/Camera.fbx
+Dependencies:
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_mat1

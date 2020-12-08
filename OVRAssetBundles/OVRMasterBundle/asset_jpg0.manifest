@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 659056535
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7f7aa5ab8302d7cb6ef8c7ba210bb96d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7859cd501ea75098bcf7e53f1b477c26
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+Assets:
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Textures/floor_nm.jpg
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Textures/cloth_1.jpg
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Textures/floor.jpg
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Textures/wood_3.JPG
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Textures/wood_2.jpg
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Textures/cloth_5.jpg
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Textures/wood_1.jpg
+Dependencies: []

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1927774010
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 374cbc7076846d59ec268886a71c2595
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: fdf6c57a251b9f6ec27bdd2fe01b033c
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+Assets:
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/DefaultCursor/DefaultCursor.controller
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Animations/Cursors/TeleportCursor/TeleportCursorController.controller
+Dependencies:
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_anim0

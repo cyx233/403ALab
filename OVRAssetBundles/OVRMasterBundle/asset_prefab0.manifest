@@ -1,0 +1,192 @@
+ManifestFileVersion: 0
+CRC: 3512044561
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 03069119d2470a7ecfb2ee5eedb9ecd3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 93ddbd999620797ed3842fda17a71c85
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 59
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 84
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 99988e20580a1af43a6d21f7ce23d41e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 50a98250b1185054c9231cc5021350bb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 61e55d5030302974a867024ab486d306, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 45d3baa0a5986c24cbf0a6f6dcef2ec7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9f0601d0cb497ac4a95c6f4b33459229, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1287d4d138a242f794bcfc01354d3ae2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 889e684278db8a542aa634e254b665aa, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6682dc6245ac3fd4ea723a628fbee9ee, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 30cbcc924a054d259edafaeb0a82f2ac, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 81c169a39f8e430d869bbc5d938b0e5a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8d163ea383bb81143a785530d92e2c62, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 91cf8ec3353d87d409bfce42a1bc6d1c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b248d6e35059cbf4c959d4efa7c5a60e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9296b71443954db1b4571935a43e5266, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 04b1ba3412a235c4d8c3eb2a18528b67, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 695a5774063fea4478cb74ca28d26855, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8af940557c3b8434598ee5b473021dca, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: aba306553ac16954eb6f0300f002b515, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 85b0e186e2c82324b83f3696c29cf697, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 60e108b635a73db40a8d3c02d87c249f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9c523107adbf4a9b8ca63b83f2f89aba, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ef91a627a11b4a22b41dd9109dfd8703, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a98de877dee5fc341b4eb59dfdab266c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1dd49f28690ebf44380bab44d85dd45b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2dfa7178ac1c18947adff71ef2792a84, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 58b057782dc195046be4237d30ffbb87, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cb6f2e295c1c9aa45b55ed20c5830480, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7d612b39739f7ed41a73c6dbafebd2ab, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5b3e6359c9750ad4fb8a05c9b8704d7b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2a969079783d81144bce7e89bd03ac89, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6fc8e15adebaa8d42b18d3d930dee492, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9ad642cb404a45048a6584e673951ccc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1a37656c1d3e22d4fb4bd26e18ad185f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 49eebbfcc03829f4ebed61c2617da0fc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2ec6254dd9866974b9912b464cb2dc67, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2547b4dd088644d6aaf64f45df657c79, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4196b75e9e3b4d0c95239473ccc333b8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b8a9ef5f8a8a8a544b72a491c9bc99f4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a86b28bfea793ef4ea0e3956e5ba03a9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 305511cf46164e8a8a7f71ac65deefbb, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 120
+  Script: {instanceID: 0}
+- Class: 124
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Cursors/CursorMoveArrowsMove.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Hands/HandJointSphere.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Controllers/DebugControllers/GizmoLeft.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Controllers/DebugControllers/HandRight.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Cursors/CursorMoveArrowsEastWest.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Hands/HandJointSmall.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Cursors/CursorRest.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Hands/HandAxes.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Controllers/DebugControllers/GizmoRight.prefab
+- Assets/com.tsinghua.iotvrp/Scenes/Prefabs/Things/Door1.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Pointers/DefaultControllerPointer.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Cursors/DefaultCursor.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Pointers/PokePointer.prefab
+- Assets/com.tsinghua.iotvrp/Scenes/Prefabs/Things/TV0.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Pointers/TouchPointer.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Prefabs/ArticulatedHandMesh.prefab
+- Assets/com.tsinghua.iotvrp/Scenes/Prefabs/Things/Bedroom.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Cursors/FingerCursor.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Pointers/MousePointer.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Pointers/ConicalGrabPointer.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Cursors/MouseCursor.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Tooltips/Spline
+  ToolTip.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Cursors/CursorRotateArrowsVertical.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Cursors/CursorMoveArrowsNorthSouth.prefab
+- Assets/com.tsinghua.iotvrp/Scenes/Prefabs/Things/Lamp0.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Cursors/CursorFocus.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Controllers/DebugControllers/HandLeft.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Pointers/GGVPointer.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Cursors/CursorMoveArrowsNorthwestSoutheast.prefab
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Prefabs/Cursors/CursorMoveArrowsNortheastSouthwest.prefab
+Dependencies:
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_asset0
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_controller0
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_fbx0
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_mat1
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_prefab1
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_rendertexture0
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_resources

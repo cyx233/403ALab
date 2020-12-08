@@ -1,0 +1,39 @@
+ManifestFileVersion: 0
+CRC: 1093670236
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0bb5f1359383bfba0528e82155d14cc1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c90fc19e2679e5295d10bd00f33cb4c3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/DoorPackFree/Meshes/Door001/V4/Aferar_13
+  - Default_AO.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/DoorPackFree/Meshes/Door001/V4/Aferar_13
+  - Default_Normal.png
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Textures/DefaultPointerDottedLine.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/TV/textures/texture_tv.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/Camera/Materials/Camera_BoxLens_Emission.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/Camera/Materials/Camera_BoxLens_Normal.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/TV/textures/texture_tv_normal.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/Camera/Materials/Camera_SwivelMount_MetallicSmoothness.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/DoorPackFree/Meshes/Door001/V4/Aferar_13
+  - Default_AlbedoTransparency.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/Camera/Materials/Camera_BoxLens_MetallicSmoothness.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/Camera/Materials/Camera_SwivelMount_AlbedoTransparency.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/DoorPackFree/Meshes/Door001/V4/Aferar_13
+  - Default_SpecularSmoothness.png
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Icons/settings_icon.png
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Textures/MouseCursor.png
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Textures/IridescentSpectrum.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/TV/textures/texture_tv_spec.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/Camera/Materials/Camera_SwivelMount_Normal.png
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/Camera/Materials/Camera_BoxLens_AlbedoTransparency.png
+Dependencies: []

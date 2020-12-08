@@ -1,0 +1,57 @@
+ManifestFileVersion: 0
+CRC: 875440119
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c84c5dcf02a32d549d5496cafeca3d5e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7b58e8929cf592a1ce1fdc865511b46a
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 84
+  Script: {instanceID: 0}
+Assets:
+- Packages/com.microsoft.mixedreality.toolkit.foundation/Services/DiagnosticsSystem/Materials/DiagnosticsInstancedColored.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Materials/MRTK_GrabPointerTetherLine.mat
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Materials/MRTK_Wireframe.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Materials/cloth_5.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Interactable/Materials/HolographicBackPlate.mat
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Materials/MRTK_Standard_Green.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Materials/MRTK_DefaultPointerLine.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/Materials/cloth_1.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Materials/HandIndexTip.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/Security_Pack/Models/Camera/Materials/Lens.mat
+- Assets/com.tsinghua.iotvrp/Scenes/Materials/wood_refl.mat
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Materials/MRTK_Standard_LightGray.mat
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Materials/MRTK_Standard_Black.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/Materials/wood_3.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/Materials/floor.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/Providers/Oculus/XRSDK/MRTK-Quest/Art/Materials/HandMeshOutline.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Materials/Teleport/TeleportArrow.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Materials/MouseCursor.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Materials/wood_1.mat
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Materials/MRTK_Standard_Red.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/TV/Materials/texture_tv.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/BigFurniturePack/Models/Materials/base_material
+  2.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Materials/MRTK_ArticulatedHandMesh.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Materials/MRTK_DefaultPointerLineNoTarget.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/DoorPackFree/Meshes/Door001/Materials/V4.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Features/UX/Meshes/Cursors/Materials/Shadow.mat
+- Assets/com.tsinghua.iotvrp/Thirdparty/OculusAssetStore/TV/model/Materials/09 -
+  Default.mat
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/StandardAssets/Materials/MRTK_FingerTipCursor.mat
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Materials/MRTK_Standard_Lime.mat
+- Assets/com.tsinghua.iotvrp/Scenes/Materials/CameraItem.mat
+Dependencies:
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_jpg0
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_png0
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_rendertexture0
+- D:/Study/School/GUI/403ALab-master/OVRAssetBundles/OVRMasterBundle/asset_shader0

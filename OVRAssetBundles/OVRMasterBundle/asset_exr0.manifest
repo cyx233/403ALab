@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 2721366028
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0b4a550e91ce6393b97a681d7edac17a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7ae03148ccc2d81279420f9cf5a52f48
+HashAppended: 0
+ClassTypes:
+- Class: 89
+  Script: {instanceID: 0}
+Assets:
+- Assets/com.tsinghua.iotvrp/Scenes/Client/ReflectionProbe-0.exr
+- Assets/com.tsinghua.iotvrp/Scenes/Client/ReflectionProbe-1.exr
+Dependencies: []

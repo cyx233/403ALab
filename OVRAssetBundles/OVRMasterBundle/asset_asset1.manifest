@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 1606951292
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: cb2e302364308f17115c755220000039
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: d7663f082ee3cb03d9c03c3188d6acfb
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 1f18fec9b55c4f818e284af454161962, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Packages/com.microsoft.mixedreality.toolkit.foundation/SDK/Profiles/DefaultMixedRealitySpeechCommandsProfile.asset
+Dependencies: []

@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 603827399
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 939cbfb2c5b2be37c194acff8d90d3be
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Audio/MRTK_Manipulation_Start.wav
+- Packages/com.microsoft.mixedreality.toolkit.standardassets/Audio/MRTK_Select_Main.wav
+Dependencies: []
