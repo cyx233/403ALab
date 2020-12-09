@@ -9,6 +9,8 @@ namespace Tsinghua.HCI.IoTVRP
     public class GestureRecognizerItem : MonoBehaviour
     {
         private float EPS = 0.005f;
+        public OVRHand LeftHand;
+        public OVRHand RightHand;
 
         [SerializeField]
         [Tooltip("Action performed after sensor is triggered")]
