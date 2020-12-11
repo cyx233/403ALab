@@ -2,8 +2,11 @@
 {
     public enum GestureType
     {
+        None,
         TurnOn,
-        TurnOff
+        TurnOff,
+        TurnUp,
+        TurnDown,
     }
 
     public class GestureEventData 
