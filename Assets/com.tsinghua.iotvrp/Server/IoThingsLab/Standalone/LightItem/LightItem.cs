@@ -10,8 +10,8 @@ namespace Tsinghua.HCI.IoTVRP
     public enum MappingMode
     {
         Direct, // adjust all the lights at the same pace
-        Distance, // adjust lights w.r.t distance
-        Focus // TBD
+        InvDistance, // speed = direct_speed / dist
+        ExpDistance, // speed = direct_speed * (1 + 4 * e^{-x})
     }
 
     public class LightItem : MonoBehaviour
@@ -23,25 +23,27 @@ namespace Tsinghua.HCI.IoTVRP
                 return direct_speed;
             }
 
-            public static float Distance(float direct_speed, float dist)
+            public static float InvDistance(float direct_speed, float dist)
             {
-                return direct_speed / dist;
+                return direct_speed / dist * 7;
             }
 
-            public static float Focus(float ds, float dist)
+            public static float ExpDistance(float ds, float dist)
             {
-                return ds;
+                return ds * (1 + 4 * (float)Math.Exp(-dist));
             }
         }
 
 
         static private MappingMode mode;
+        static private int mode_len;
+
         delegate float MappingFunc(float direct_speed, float dist);
         static Dictionary<MappingMode, MappingFunc> mappingFuncs = new Dictionary<MappingMode, MappingFunc>()
         {
             {MappingMode.Direct, MappingFunctions.Direct},
-            {MappingMode.Distance, MappingFunctions.Distance},
-            {MappingMode.Focus, MappingFunctions.Focus},
+            {MappingMode.InvDistance, MappingFunctions.InvDistance},
+            {MappingMode.ExpDistance, MappingFunctions.ExpDistance},
         };
 
         // it takes `speed_in_frames` number of frames to change light intensity from min to max
@@ -72,26 +74,14 @@ namespace Tsinghua.HCI.IoTVRP
 
         public static void ToggleMode()
         {
-            switch (mode)
-            {
-                case MappingMode.Direct:
-                    mode = MappingMode.Distance;
-                    break;
-                case MappingMode.Distance:
-                    //TODO: change to FOCUS if implemented
-                    mode = MappingMode.Direct;
-                    break;
-                case MappingMode.Focus:
-                    mode = MappingMode.Direct;
-                    break;
-                default:
-                    mode = MappingMode.Direct;
-                    break;
-            }
+            int int_mode = System.Convert.ToInt32(mode);
+            int_mode = (int_mode + 1) % mode_len;
+            mode = (MappingMode)Enum.ToObject(typeof(MappingMode), int_mode);
         }
-        public static MappingMode GetMode()
+
+        public static string GetMode()
         {
-            return mode;
+            return Enum.GetName(typeof(MappingMode), mode);
         }
 
 
@@ -108,6 +98,7 @@ namespace Tsinghua.HCI.IoTVRP
             gestureType = GestureType.None;
             lightname = gameObject.name;
             direct_speed = (maxIntensity[lightname] - minIntensity[lightname]) / speed_in_frames;
+            mode_len = Enum.GetNames(typeof(MappingMode)).Length;
         }
 
         // Update is called once per frame
@@ -187,7 +178,6 @@ namespace Tsinghua.HCI.IoTVRP
             if (_light.intensity > minIntensity[lightname])
                 _light.intensity += num;
         }
-
 
         public void GestureControl(GestureEventData gestureEventData)
         {
