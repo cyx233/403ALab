@@ -10,6 +10,8 @@ namespace Tsinghua.HCI.IoTVRP
     {
         private Light _light;
         // Start is called before the first frame update
+
+        public 
         void Start()
         {
             _light = GetComponent<Light>();
@@ -59,6 +61,15 @@ namespace Tsinghua.HCI.IoTVRP
         {
             return _light;
         }
+        public void IncreaseIntensity(float num)
+        {
+            _light.intensity += num;
+        }
+        public void DecreaseIntensity(float num)
+        {
+            _light.intensity -= num;
+        }
+
 
         public void GestureControl(GestureEventData gestureEventData)
         {
@@ -70,9 +81,16 @@ namespace Tsinghua.HCI.IoTVRP
                 case GestureType.TurnOff:
                     TurnOff();
                     break;
+
                 default:
                     break;
             }
+            // gameObject.name
+        }
+
+        public void UnsetGestureControl()
+        {
+
         }
     }
 }
