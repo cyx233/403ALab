@@ -942,7 +942,7 @@ PrefabInstance:
     - target: {fileID: 6382111206013823244, guid: ce816f2e6abb0504092c23ed9b970dfd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6382111206013890632, guid: ce816f2e6abb0504092c23ed9b970dfd,
         type: 3}
@@ -1354,7 +1354,7 @@ PrefabInstance:
     - target: {fileID: 1400041724854849767, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00849791
+      value: 0.008497911
       objectReference: {fileID: 0}
     - target: {fileID: 1402891257348322933, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
@@ -2233,6 +2233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
       propertyPath: LeftHand
       value: 
       objectReference: {fileID: 2061870985}
@@ -2241,6 +2246,31 @@ PrefabInstance:
       propertyPath: RightHand
       value: 
       objectReference: {fileID: 2061870977}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4484767591003371039}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnsetGestureControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5323605960113748857, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2393,3 +2423,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9d18bb71333a784f80f9326c6acc6ab, type: 3}
+--- !u!114 &4484767591003371039 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2990660986330207253, guid: a9d18bb71333a784f80f9326c6acc6ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 4484767591003371038}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d163ea383bb81143a785530d92e2c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
