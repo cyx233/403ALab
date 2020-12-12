@@ -52,21 +52,21 @@ namespace Tsinghua.HCI.IoTVRP
 
         static Dictionary<string, float> defaultIntensity = new Dictionary<string, float>()
         {
-            { "DestLightItem", 4 },
+            { "DeskLightItem", 4 },
             { "MainLightItem", 4 },
             { "ReadingLightItem", 3 },
             { "NightLightItem", 5 },
         };
         static Dictionary<string, float> minIntensity = new Dictionary<string, float>()
         {
-            { "DestLightItem", 1 },
+            { "DeskLightItem", 1 },
             { "MainLightItem", 1 },
             { "ReadingLightItem", 1 },
             { "NightLightItem", 5 },
         };
         static Dictionary<string, float> maxIntensity = new Dictionary<string, float>()
         {
-            { "DestLightItem", 10 },
+            { "DeskLightItem", 10 },
             { "MainLightItem", 10 },
             { "ReadingLightItem", 10 },
             { "NightLightItem", 5 },
@@ -176,7 +176,7 @@ namespace Tsinghua.HCI.IoTVRP
         public void DecreaseIntensity(float num)
         {
             if (_light.intensity > minIntensity[lightname])
-                _light.intensity += num;
+                _light.intensity -= num;
         }
 
         public void GestureControl(GestureEventData gestureEventData)
