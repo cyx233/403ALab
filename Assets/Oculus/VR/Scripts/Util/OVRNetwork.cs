@@ -112,7 +112,7 @@ public class OVRNetwork
 				}
 				catch (Exception e)
 				{
-					Debug.LogWarningFormat("[OVRNetworkTcpServer] can't accept new client: {0}", e.Message);
+					// Debug.LogWarningFormat("[OVRNetworkTcpServer] can't accept new client: {0}", e.Message);
 				}
 			}
 		}
@@ -121,7 +121,7 @@ public class OVRNetwork
 		{
 			if (tcpListener == null)
 			{
-				Debug.LogWarning("[OVRNetworkTcpServer] tcpListener is null");
+				// Debug.LogWarning("[OVRNetworkTcpServer] tcpListener is null");
 				return;
 			}
 
