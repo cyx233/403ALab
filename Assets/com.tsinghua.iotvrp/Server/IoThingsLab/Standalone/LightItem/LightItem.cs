@@ -114,7 +114,7 @@ namespace Tsinghua.HCI.IoTVRP
         private GestureType gestureType;
         private string lightname;
         private OVRPlayerController player;
-        private long THRESH = 100;
+        private long THRESH = 60;
         long triggered_frame;
 
         // Start is called before the first frame update
@@ -134,12 +134,14 @@ namespace Tsinghua.HCI.IoTVRP
             switch (gestureType)
             {
                 case GestureType.TurnUp:
-                    if (_light.intensity < maxIntensity[lightname])
-                        _light.intensity += mappingFuncs[mode](direct_speed, GetDistanceFromPlayer());
+                    //if (_light.intensity < maxIntensity[lightname])
+                    //   _light.intensity += mappingFuncs[mode](direct_speed, GetDistanceFromPlayer());
+                    IncreaseIntensity(mappingFuncs[mode](direct_speed, GetDistanceFromPlayer()));
                     break;
                 case GestureType.TurnDown:
-                    if (_light.intensity > minIntensity[lightname])
-                        _light.intensity -= mappingFuncs[mode](direct_speed, GetDistanceFromPlayer());
+                    DecreaseIntensity(mappingFuncs[mode](direct_speed, GetDistanceFromPlayer()));
+                    //if (_light.intensity > minIntensity[lightname])
+                     //   _light.intensity -= mappingFuncs[mode](direct_speed, GetDistanceFromPlayer());
                     break;
             }
             triggered_frame += 1;
@@ -203,12 +205,12 @@ namespace Tsinghua.HCI.IoTVRP
 
         public void IncreaseIntensity(float num)
         {
-            if (_light.intensity < maxIntensity[lightname])
+            if (_light.intensity < maxIntensity[lightname] && _light.enabled)
                 _light.intensity += num;
         }
         public void DecreaseIntensity(float num)
         {
-            if (_light.intensity > minIntensity[lightname])
+            if (_light.intensity > minIntensity[lightname] && _light.enabled)
                 _light.intensity -= num;
         }
 
