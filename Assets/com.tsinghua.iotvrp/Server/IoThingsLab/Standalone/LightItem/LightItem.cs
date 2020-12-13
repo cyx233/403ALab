@@ -111,7 +111,8 @@ namespace Tsinghua.HCI.IoTVRP
 
 
         private Light _light;
-        private GestureType gestureType;
+        //private GestureType gestureType;
+        private bool leftUp, leftDown, rightUp, rightDown;
         private string lightname;
         private OVRPlayerController player;
         private long THRESH = 60;
@@ -122,7 +123,11 @@ namespace Tsinghua.HCI.IoTVRP
         {
             _light = GetComponent<Light>();
             player = GameObject.FindObjectOfType<OVRPlayerController>();
-            gestureType = GestureType.None;
+            //gestureType = GestureType.None;
+            leftUp = false;
+            leftDown = false;
+            rightUp = false;
+            rightDown = false;
             lightname = gameObject.name;
             direct_speed = (maxIntensity[lightname] - minIntensity[lightname]) / speed_in_frames;
             triggered_frame = THRESH;
@@ -131,9 +136,10 @@ namespace Tsinghua.HCI.IoTVRP
         // Update is called once per frame
         void Update()
         {
-            switch (gestureType)
+            /*
+            switch ()
             {
-                case GestureType.TurnUp:
+                case GestureType.LeftTurnUp:
                     //if (_light.intensity < maxIntensity[lightname])
                     //   _light.intensity += mappingFuncs[mode](direct_speed, GetDistanceFromPlayer());
                     IncreaseIntensity(mappingFuncs[mode](direct_speed, GetDistanceFromPlayer()));
@@ -144,6 +150,16 @@ namespace Tsinghua.HCI.IoTVRP
                      //   _light.intensity -= mappingFuncs[mode](direct_speed, GetDistanceFromPlayer());
                     break;
             }
+            */
+            if (leftUp)
+                IncreaseIntensity(mappingFuncs[mode](direct_speed, GetDistanceFromPlayer()));
+            else if (leftDown)
+                DecreaseIntensity(mappingFuncs[mode](direct_speed, GetDistanceFromPlayer()));
+            if (rightUp)
+                IncreaseIntensity(mappingFuncs[mode](direct_speed, GetDistanceFromPlayer()));
+            else if (rightDown)
+                DecreaseIntensity(mappingFuncs[mode](direct_speed, GetDistanceFromPlayer()));
+
             triggered_frame += 1;
         }
 
@@ -228,18 +244,38 @@ namespace Tsinghua.HCI.IoTVRP
                     }
                     //Toggle();
                     break;
-                case GestureType.TurnUp:
-                    gestureType = GestureType.TurnUp;
+                case GestureType.LeftTurnUp:
+                    leftUp = true;
                     break;
-                case GestureType.TurnDown:
-                    gestureType = GestureType.TurnDown;
+                case GestureType.LeftTurnDown:
+                    leftDown = true;
+                    break;
+                case GestureType.RightTurnUp:
+                    rightUp = true;
+                    break;
+                case GestureType.RightTurnDown:
+                    rightDown = true;
                     break;
             }
         }
 
-        public void UnsetGestureControl()
+        public void UnsetGestureControl(GestureEventData gestureEventData)
         {
-            gestureType = GestureType.None;
+            switch (gestureEventData.GestureType)
+            {
+                case GestureType.LeftTurnUp:
+                    leftUp = false;
+                    break;
+                case GestureType.LeftTurnDown:
+                    leftDown = false;
+                    break;
+                case GestureType.RightTurnUp:
+                    rightUp = false;
+                    break;
+                case GestureType.RightTurnDown:
+                    rightDown = false;
+                    break;
+            }
         }
     }
 

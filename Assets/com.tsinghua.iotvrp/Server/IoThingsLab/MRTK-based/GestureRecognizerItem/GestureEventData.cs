@@ -4,8 +4,10 @@
     {
         None,
         ToggleOnOff,
-        TurnUp,
-        TurnDown,
+        LeftTurnUp,
+        RightTurnUp,
+        LeftTurnDown,
+        RightTurnDown,
     }
 
     public class GestureEventData 
