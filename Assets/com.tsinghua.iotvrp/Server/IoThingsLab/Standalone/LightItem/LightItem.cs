@@ -35,7 +35,7 @@ namespace Tsinghua.HCI.IoTVRP
         }
 
 
-        static private MappingMode mode;
+        static public MappingMode mode;
         static private int mode_len;
 
         delegate float MappingFunc(float direct_speed, float dist);
@@ -74,9 +74,17 @@ namespace Tsinghua.HCI.IoTVRP
 
         public static void ToggleMode()
         {
+            /*
             int int_mode = System.Convert.ToInt32(mode);
             int_mode = (int_mode + 1) % mode_len;
             mode = (MappingMode)Enum.ToObject(typeof(MappingMode), int_mode);
+            */
+            if (mode == MappingMode.Direct)
+                mode = MappingMode.ExpDistance;
+            else if (mode == MappingMode.ExpDistance)
+                mode = MappingMode.InvDistance;
+            else if (mode == MappingMode.InvDistance)
+                mode = MappingMode.Direct;
         }
 
         public static string GetMode()
