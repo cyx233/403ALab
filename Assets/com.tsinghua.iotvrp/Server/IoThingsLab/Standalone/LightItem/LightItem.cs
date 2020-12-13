@@ -108,6 +108,8 @@ namespace Tsinghua.HCI.IoTVRP
         private GestureType gestureType;
         private string lightname;
         private OVRPlayerController player;
+        private long THRESH = 10000;
+        long triggered_frame;
 
         // Start is called before the first frame update
         void Start()
@@ -117,6 +119,7 @@ namespace Tsinghua.HCI.IoTVRP
             gestureType = GestureType.None;
             lightname = gameObject.name;
             direct_speed = (maxIntensity[lightname] - minIntensity[lightname]) / speed_in_frames;
+            triggered_frame = 10000;
         }
 
         // Update is called once per frame
@@ -133,6 +136,7 @@ namespace Tsinghua.HCI.IoTVRP
                         _light.intensity -= mappingFuncs[mode](direct_speed, GetDistanceFromPlayer());
                     break;
             }
+            triggered_frame += 1;
         }
 
         float GetDistanceFromPlayer()
@@ -202,13 +206,12 @@ namespace Tsinghua.HCI.IoTVRP
             Debug.Log(gestureEventData.GestureType);
             switch (gestureEventData.GestureType)
             {
-                case GestureType.TurnOn:
-                    gestureType = GestureType.TurnOn;
-                    TurnOn();
-                    break;
-                case GestureType.TurnOff:
-                    gestureType = GestureType.TurnOff;
-                    TurnOff();
+                case GestureType.ToggleOnOff:
+                    if (triggered_frame > THRESH)
+                    {
+                        Toggle();
+                        triggered_frame = 0;
+                    }
                     break;
                 case GestureType.TurnUp:
                     gestureType = GestureType.TurnUp;

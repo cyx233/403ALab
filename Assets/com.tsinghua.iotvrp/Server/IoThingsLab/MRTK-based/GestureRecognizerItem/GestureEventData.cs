@@ -3,8 +3,7 @@
     public enum GestureType
     {
         None,
-        TurnOn,
-        TurnOff,
+        ToggleOnOff,
         TurnUp,
         TurnDown,
     }
