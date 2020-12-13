@@ -47,7 +47,7 @@ namespace Tsinghua.HCI.IoTVRP
         };
 
         // it takes `speed_in_frames` number of frames to change light intensity from min to max
-        static int speed_in_frames = 1000;
+        static int speed_in_frames = 500;
         private float direct_speed; // = (max - min) / speed_in_frames
 
         static Dictionary<string, float> defaultIntensity = new Dictionary<string, float>()
@@ -79,6 +79,12 @@ namespace Tsinghua.HCI.IoTVRP
             int_mode = (int_mode + 1) % mode_len;
             mode = (MappingMode)Enum.ToObject(typeof(MappingMode), int_mode);
             */
+
+            LightItem[] lights = GameObject.FindObjectsOfType<LightItem>();
+            for (int i = 0; i < lights.Length; i++)
+            {
+                lights[i].SetIntensity(defaultIntensity[lights[i].GetLightName()]);
+            }
             if (mode == MappingMode.Direct)
                 mode = MappingMode.ExpDistance;
             else if (mode == MappingMode.ExpDistance)
@@ -108,7 +114,7 @@ namespace Tsinghua.HCI.IoTVRP
         private GestureType gestureType;
         private string lightname;
         private OVRPlayerController player;
-        private long THRESH = 10000;
+        private long THRESH = 100;
         long triggered_frame;
 
         // Start is called before the first frame update
@@ -119,7 +125,7 @@ namespace Tsinghua.HCI.IoTVRP
             gestureType = GestureType.None;
             lightname = gameObject.name;
             direct_speed = (maxIntensity[lightname] - minIntensity[lightname]) / speed_in_frames;
-            triggered_frame = 10000;
+            triggered_frame = THRESH;
         }
 
         // Update is called once per frame
@@ -167,7 +173,6 @@ namespace Tsinghua.HCI.IoTVRP
 
         public void TurnOn()
         {
-            _light.intensity = defaultIntensity[lightname];
             _light.enabled = true;
         }
 
@@ -190,6 +195,12 @@ namespace Tsinghua.HCI.IoTVRP
         {
             return _light;
         }
+
+        public string GetLightName()
+        {
+            return lightname;
+        }
+
         public void IncreaseIntensity(float num)
         {
             if (_light.intensity < maxIntensity[lightname])
@@ -210,10 +221,10 @@ namespace Tsinghua.HCI.IoTVRP
                     if (triggered_frame > THRESH)
                     {
                         Debug.Log(triggered_frame);
-                        //Toggle();
+                        Toggle();
                         triggered_frame = 0;
                     }
-                    Toggle();
+                    //Toggle();
                     break;
                 case GestureType.TurnUp:
                     gestureType = GestureType.TurnUp;
