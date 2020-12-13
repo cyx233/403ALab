@@ -3,85 +3,90 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[System.Serializable]
-public struct Gesture
+namespace Tsinghua.HCI.IoTVRP
 {
-    public string name;
-    public List<Vector3> fingerDatas;
-    public UnityEvent onRecognized;
-}
-
-public class GestureDetector : MonoBehaviour
-{
-    public float threshold;
-    public OVRSkeleton skeleton;
-    public List<Gesture> gestures;
-    public bool debugMode = true;
-    public int bonesSize;
-    public List<OVRBone> fingerBones;
-    private Gesture previousGesture;
-
-    // Start is called before the first frame update
-    void Start()
+    [System.Serializable]
+    public struct Gesture
     {
-        fingerBones = new List<OVRBone>(skeleton.Bones);
-        previousGesture = new Gesture();
+        public string name;
+        public List<Vector3> fingerDatas;
+        public UnityEvent onRecognized;
     }
 
-    // Update is called once per frame
-    void Update()
+    public class GestureDetector : MonoBehaviour
     {
-        if(debugMode && Input.GetKeyDown(KeyCode.Space)){
-            Save();
-        }
-        Gesture currentGesture = Recognize();
-        bool hasRecognized = !currentGesture.Equals(new Gesture());
-        // Debug.Log("hasRecognized" + currentGesture.name);
-        if(hasRecognized && !currentGesture.Equals(previousGesture)){
-            Debug.Log("New gesture found: " + currentGesture.name);
-            previousGesture = currentGesture;
-            currentGesture.onRecognized.Invoke();
-        }
-    }
+        public float threshold;
+        public OVRSkeleton skeleton;
+        public List<Gesture> gestures;
+        public bool debugMode = true;
+        public int bonesSize;
+        public List<OVRBone> fingerBones;
+        private Gesture previousGesture;
+        public Gesture currentGesture;
 
-    void Save()
-    {
-        Gesture g = new Gesture();
-        g.name = "New Gesture";
-        List<Vector3> data = new List<Vector3>();
-        fingerBones = new List<OVRBone>(skeleton.Bones);
-        foreach (var bone in fingerBones)
+        // Start is called before the first frame update
+        void Start()
         {
-            data.Add(skeleton.transform.InverseTransformPoint(bone.Transform.position));
+            fingerBones = new List<OVRBone>(skeleton.Bones);
+            currentGesture = new Gesture();
         }
-        g.fingerDatas = data;
-        gestures.Add(g);
-        bonesSize = fingerBones.Count;
-    }
 
-    Gesture Recognize(){
-        Gesture currentgesture = new Gesture();
-        float currentMin = Mathf.Infinity;
-        fingerBones = new List<OVRBone>(skeleton.Bones);
+        // Update is called once per frame
+        void Update()
+        {
+            if(debugMode && Input.GetKeyDown(KeyCode.Space)){
+                Save();
+            }
+            currentGesture = Recognize();
+            bool hasRecognized = !currentGesture.Equals(new Gesture());
+            // Debug.Log("hasRecognized" + currentGesture.name);
+            // if(hasRecognized && !currentGesture.Equals(previousGesture)){
+            if(hasRecognized){
+                Debug.Log("New gesture found: " + currentGesture.name);
+                // previousGesture = currentGesture;
+                // currentGesture.onRecognized.Invoke();
+            }
+        }
 
-        foreach(var gesture in gestures){
-            float sumDistance = 0;
-            bool isDiscarded = false;
-            
-            for(int i = 0; i < fingerBones.Count; i++){
-                Vector3 currentData = skeleton.transform.InverseTransformPoint(fingerBones[i].Transform.position);
-                float distance = Vector3.Distance(currentData, gesture.fingerDatas[i]);
-                if(distance > threshold){
-                    isDiscarded = true;
-                    break;
+        void Save()
+        {
+            Gesture g = new Gesture();
+            g.name = "New Gesture";
+            List<Vector3> data = new List<Vector3>();
+            fingerBones = new List<OVRBone>(skeleton.Bones);
+            foreach (var bone in fingerBones)
+            {
+                data.Add(skeleton.transform.InverseTransformPoint(bone.Transform.position));
+            }
+            g.fingerDatas = data;
+            gestures.Add(g);
+            bonesSize = fingerBones.Count;
+        }
+
+        Gesture Recognize(){
+            Gesture currentgesture = new Gesture();
+            float currentMin = Mathf.Infinity;
+            fingerBones = new List<OVRBone>(skeleton.Bones);
+
+            foreach(var gesture in gestures){
+                float sumDistance = 0;
+                bool isDiscarded = false;
+                
+                for(int i = 0; i < fingerBones.Count; i++){
+                    Vector3 currentData = skeleton.transform.InverseTransformPoint(fingerBones[i].Transform.position);
+                    float distance = Vector3.Distance(currentData, gesture.fingerDatas[i]);
+                    if(distance > threshold){
+                        isDiscarded = true;
+                        break;
+                    }
+                    sumDistance += distance;
                 }
-                sumDistance += distance;
+                if(!isDiscarded && sumDistance < currentMin){
+                    currentMin = sumDistance;
+                    currentgesture = gesture;
+                }
             }
-            if(!isDiscarded && sumDistance < currentMin){
-                currentMin = sumDistance;
-                currentgesture = gesture;
-            }
+            return currentgesture;
         }
-        return currentgesture;
     }
 }

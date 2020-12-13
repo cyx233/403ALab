@@ -12,7 +12,10 @@ namespace Tsinghua.HCI.IoTVRP
 
         private void Start()
         {
-			modetext.text = LightItem.GetMode();
+            if (modetext)
+            {
+				modetext.text = LightItem.GetMode();
+			}
 		}
 
 		private void Awake()

@@ -18,6 +18,7 @@ namespace Tsinghua.HCI.IoTVRP
         [SerializeField]
         [Tooltip("Action performed after sensor is triggered")]
         private GestureEvent m_OnSensorUntriggered;
+        public GestureDetector gestureDetector;
 
         bool _isSensorTriggered = false;
 
@@ -47,8 +48,13 @@ namespace Tsinghua.HCI.IoTVRP
         //Calculate value here
         public void SensorTrigger(GestureType type)
         {
-            if (!_isSensorTriggered) 
+            if (!_isSensorTriggered)
+            {
                 SensorTriggered(type);
+                Debug.Log("Successful");
+            }
+            Debug.Log("UnSuccessful");
+
         }
         public void SensorUntrigger(GestureType type)
         {
@@ -60,24 +66,29 @@ namespace Tsinghua.HCI.IoTVRP
         // Update is called once per frame
         void Update()
         {
-            Vector3 RightIndexTipPosition = Vector3.zero;
-            if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Right, out MixedRealityPose poseRightIndexTip))
-            {
-                RightIndexTipPosition = poseRightIndexTip.Position;
-            }
+            // Vector3 RightIndexTipPosition = Vector3.zero;
+            // if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Right, out MixedRealityPose poseRightIndexTip))
+            // {
+            //     RightIndexTipPosition = poseRightIndexTip.Position;
+            // }
 
-            Vector3 LeftIndexTipPosition = Vector3.zero;
-            if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Left, out MixedRealityPose poseLeftIndexTip))
+            // Vector3 LeftIndexTipPosition = Vector3.zero;
+            // if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Left, out MixedRealityPose poseLeftIndexTip))
+            // {
+            //     LeftIndexTipPosition = poseLeftIndexTip.Position;
+            // }
+            if(gestureDetector.currentGesture.name.Equals("Left fuck"))
             {
-                LeftIndexTipPosition = poseLeftIndexTip.Position;
-            }
-            if (Vector3.Distance(LeftIndexTipPosition, RightIndexTipPosition) < EPS)
-            {
+                Debug.Log(gestureDetector.currentGesture.name);
                 SensorTrigger(GestureType.TurnOn);
             }
-            else
+            else if(gestureDetector.currentGesture.name.Equals("Left thumb up"))
             {
+                Debug.Log(gestureDetector.currentGesture.name);
                 SensorUntrigger(GestureType.TurnOff);
+            }
+            else{
+                SensorUntrigger(GestureType.None);
             }
         }
     }
