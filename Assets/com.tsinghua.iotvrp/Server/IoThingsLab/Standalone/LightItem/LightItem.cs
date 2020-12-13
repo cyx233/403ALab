@@ -47,7 +47,7 @@ namespace Tsinghua.HCI.IoTVRP
         };
 
         // it takes `speed_in_frames` number of frames to change light intensity from min to max
-        static int speed_in_frames = 100000;
+        static int speed_in_frames = 1000;
         private float direct_speed; // = (max - min) / speed_in_frames
 
         static Dictionary<string, float> defaultIntensity = new Dictionary<string, float>()
@@ -209,9 +209,11 @@ namespace Tsinghua.HCI.IoTVRP
                 case GestureType.ToggleOnOff:
                     if (triggered_frame > THRESH)
                     {
-                        Toggle();
+                        Debug.Log(triggered_frame);
+                        //Toggle();
                         triggered_frame = 0;
                     }
+                    Toggle();
                     break;
                 case GestureType.TurnUp:
                     gestureType = GestureType.TurnUp;

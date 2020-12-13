@@ -80,15 +80,22 @@ namespace Tsinghua.HCI.IoTVRP
             // {
             //     LeftIndexTipPosition = poseLeftIndexTip.Position;
             // }
-            if(gestureDetector.currentGesture.name.Equals("Left fuck")) {
-                SensorTrigger(GestureType.TurnOn);
+            if(gestureDetector.currentGesture.name.Equals("TurnUp")) {
+                Debug.Log("Gesture: turnup");
+                SensorTrigger(GestureType.TurnUp);
             }
-            else if(gestureDetector.currentGesture.name.Equals("Left thumb up"))
+            else if(gestureDetector.currentGesture.name.Equals("TurnDown"))
             {
-                SensorTrigger(GestureType.TurnOff);
+                Debug.Log("Gesture: turndown");
+                SensorTrigger(GestureType.TurnDown);
+            }
+            else if(gestureDetector.currentGesture.name.Equals("ToggleOnOff"))
+            {
+                Debug.Log("Gesture: toggle");
+                SensorTrigger(GestureType.ToggleOnOff);
             }
             else if(gestureDetector.currentGesture.name.Equals("None")){
-                SensorUntrigger(GestureType.TurnOff);
+                SensorUntrigger(GestureType.None);
             }
         }
     }
