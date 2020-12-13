@@ -35,8 +35,8 @@ namespace Tsinghua.HCI.IoTVRP
         }
 
 
-        static public MappingMode mode;
-        static private int mode_len;
+        static public MappingMode mode = MappingMode.Direct;
+        static private int mode_len = Enum.GetNames(typeof(MappingMode)).Length;
 
         delegate float MappingFunc(float direct_speed, float dist);
         static Dictionary<MappingMode, MappingFunc> mappingFuncs = new Dictionary<MappingMode, MappingFunc>()
@@ -89,7 +89,18 @@ namespace Tsinghua.HCI.IoTVRP
 
         public static string GetMode()
         {
-            return Enum.GetName(typeof(MappingMode), mode);
+            //return Enum.GetName(typeof(MappingMode), mode);
+            switch (mode)
+            {
+                case MappingMode.Direct:
+                    return "Direct";
+                case MappingMode.InvDistance:
+                    return "Inverse Distance";
+                case MappingMode.ExpDistance:
+                    return "Exponential Distance";
+                default:
+                    return "";
+            }
         }
 
 
@@ -106,7 +117,6 @@ namespace Tsinghua.HCI.IoTVRP
             gestureType = GestureType.None;
             lightname = gameObject.name;
             direct_speed = (maxIntensity[lightname] - minIntensity[lightname]) / speed_in_frames;
-            mode_len = Enum.GetNames(typeof(MappingMode)).Length;
         }
 
         // Update is called once per frame
