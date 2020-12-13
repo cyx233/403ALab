@@ -29,6 +29,7 @@ namespace Tsinghua.HCI.IoTVRP
         {
             fingerBones = new List<OVRBone>(skeleton.Bones);
             currentGesture = new Gesture();
+            currentGesture.name = "None";
         }
 
         // Update is called once per frame
@@ -38,14 +39,12 @@ namespace Tsinghua.HCI.IoTVRP
                 Save();
             }
             currentGesture = Recognize();
-            bool hasRecognized = !currentGesture.Equals(new Gesture());
+            //bool hasRecognized = !currentGesture.name.Equals("None");
             // Debug.Log("hasRecognized" + currentGesture.name);
             // if(hasRecognized && !currentGesture.Equals(previousGesture)){
-            if(hasRecognized){
-                Debug.Log("New gesture found: " + currentGesture.name);
-                // previousGesture = currentGesture;
-                // currentGesture.onRecognized.Invoke();
-            }
+            //if(hasRecognized){
+            //    Debug.Log("New gesture found: " + currentGesture.name);
+            //}
         }
 
         void Save()
@@ -67,6 +66,7 @@ namespace Tsinghua.HCI.IoTVRP
             Gesture currentgesture = new Gesture();
             float currentMin = Mathf.Infinity;
             fingerBones = new List<OVRBone>(skeleton.Bones);
+            currentgesture.name = "None";
 
             foreach(var gesture in gestures){
                 float sumDistance = 0;

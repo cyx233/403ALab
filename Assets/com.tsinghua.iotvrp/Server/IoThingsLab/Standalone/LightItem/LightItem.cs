@@ -199,6 +199,7 @@ namespace Tsinghua.HCI.IoTVRP
 
         public void GestureControl(GestureEventData gestureEventData)
         {
+            Debug.Log(gestureEventData.GestureType);
             switch (gestureEventData.GestureType)
             {
                 case GestureType.TurnOn:
@@ -214,9 +215,6 @@ namespace Tsinghua.HCI.IoTVRP
                     break;
                 case GestureType.TurnDown:
                     gestureType = GestureType.TurnDown;
-                    break;
-                default:
-                    gestureType = GestureType.None;
                     break;
             }
         }

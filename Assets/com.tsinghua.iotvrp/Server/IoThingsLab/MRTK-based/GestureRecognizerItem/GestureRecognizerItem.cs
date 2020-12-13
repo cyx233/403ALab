@@ -35,7 +35,9 @@ namespace Tsinghua.HCI.IoTVRP
         void SensorTriggered(GestureType type)
         {
             _isSensorTriggered = true;
-             m_OnSensorTriggered?.Invoke(new GestureEventData(type));
+            GestureEventData temp = new GestureEventData(type);
+            Debug.Log("Data@Re:" + temp.GestureType);
+             m_OnSensorTriggered?.Invoke(temp);
         }
 
         void SensorUntriggered(GestureType type)
@@ -51,15 +53,16 @@ namespace Tsinghua.HCI.IoTVRP
             if (!_isSensorTriggered)
             {
                 SensorTriggered(type);
-                Debug.Log("Successful");
+                Debug.Log("AtReco:" + type);
             }
-            Debug.Log("UnSuccessful");
-
         }
         public void SensorUntrigger(GestureType type)
         {
-            if (_isSensorTriggered) 
+            if (_isSensorTriggered)
+            {
                 SensorUntriggered(type);
+                Debug.Log("AtRecoUn:" + type);
+            }
         }
 
 
@@ -77,18 +80,15 @@ namespace Tsinghua.HCI.IoTVRP
             // {
             //     LeftIndexTipPosition = poseLeftIndexTip.Position;
             // }
-            if(gestureDetector.currentGesture.name.Equals("Left fuck"))
-            {
-                Debug.Log(gestureDetector.currentGesture.name);
+            if(gestureDetector.currentGesture.name.Equals("Left fuck")) {
                 SensorTrigger(GestureType.TurnOn);
             }
             else if(gestureDetector.currentGesture.name.Equals("Left thumb up"))
             {
-                Debug.Log(gestureDetector.currentGesture.name);
-                SensorUntrigger(GestureType.TurnOff);
+                SensorTrigger(GestureType.TurnOff);
             }
-            else{
-                SensorUntrigger(GestureType.None);
+            else if(gestureDetector.currentGesture.name.Equals("None")){
+                SensorUntrigger(GestureType.TurnOff);
             }
         }
     }
