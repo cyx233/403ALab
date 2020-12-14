@@ -173,9 +173,9 @@ namespace Tsinghua.HCI.IoTVRP
         {
             _light = GetComponent<Light>();
             player = GameObject.FindObjectOfType<OVRPlayerController>();
+            lightname = gameObject.name;
             SetIntensity(defaultIntensity[lightname]);
             _light.enabled = false;
-            lightname = gameObject.name;
             direct_speed = (maxIntensity[lightname] - minIntensity[lightname]) / speed_in_frames;
             triggered_frame = THRESH;
             MappingFunctions.init_discount_factors();
