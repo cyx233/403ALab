@@ -131,7 +131,6 @@ namespace Tsinghua.HCI.IoTVRP
 
         public static string GetMode()
         {
-            //return Enum.GetName(typeof(MappingMode), mode);
             switch (mode)
             {
                 case MappingMode.Direct:
@@ -149,8 +148,6 @@ namespace Tsinghua.HCI.IoTVRP
 
 
         private Light _light;
-        //private GestureType gestureType;
-        //private bool leftUp, leftDown, rightUp, rightDown;
         private string lightname;
         private OVRPlayerController player;
         private long THRESH = 60;
@@ -161,12 +158,8 @@ namespace Tsinghua.HCI.IoTVRP
         {
             _light = GetComponent<Light>();
             player = GameObject.FindObjectOfType<OVRPlayerController>();
-            /*
-            leftUp = false;
-            leftDown = false;
-            rightUp = false;
-            rightDown = false;
-            */
+            SetIntensity(defaultIntensity[lightname]);
+            _light.enabled = false;
             lightname = gameObject.name;
             direct_speed = (maxIntensity[lightname] - minIntensity[lightname]) / speed_in_frames;
             triggered_frame = THRESH;
@@ -176,17 +169,6 @@ namespace Tsinghua.HCI.IoTVRP
         // Update is called once per frame
         void Update()
         {
-            /*
-            if (leftUp)
-                IncreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
-            else if (leftDown)
-                DecreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
-            if (rightUp)
-                IncreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
-            else if (rightDown)
-                DecreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
-            */
-
             triggered_frame += 1;
         }
 
