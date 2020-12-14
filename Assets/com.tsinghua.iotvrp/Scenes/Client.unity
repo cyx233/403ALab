@@ -15361,6 +15361,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1085696174579491262, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_Name
+      value: WallLightItem3
+      objectReference: {fileID: 0}
     - target: {fileID: 1220528900493472119, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
       propertyPath: m_RootOrder
@@ -15624,7 +15629,7 @@ PrefabInstance:
     - target: {fileID: 1400041724854849767, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00849791
+      value: 0.008497911
       objectReference: {fileID: 0}
     - target: {fileID: 1402891257348322933, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
@@ -15751,6 +15756,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2019157910712499969, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_Name
+      value: WallLight3
+      objectReference: {fileID: 0}
     - target: {fileID: 2447404720314295062, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
       propertyPath: m_Intensity
@@ -15796,6 +15806,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3013213885210581068, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_Name
+      value: WallLight6
+      objectReference: {fileID: 0}
     - target: {fileID: 3094146257186473072, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -15836,10 +15851,20 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3366182275169158599, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_Name
+      value: WallLightItem1
+      objectReference: {fileID: 0}
     - target: {fileID: 3488323798151795273, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3489141474595178697, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_Name
+      value: WallLightItem2
       objectReference: {fileID: 0}
     - target: {fileID: 3507688826465777067, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
@@ -15880,6 +15905,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345862296540679998, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_Name
+      value: WallLight1
       objectReference: {fileID: 0}
     - target: {fileID: 4363409717351572195, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
@@ -16125,6 +16155,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Positions.Array.data[15].z
       value: 1.1319406
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389779877633817710, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_Name
+      value: WallLightItem5
       objectReference: {fileID: 0}
     - target: {fileID: 4405249516628332705, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
@@ -16591,6 +16626,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.251
       objectReference: {fileID: 0}
+    - target: {fileID: 4514286237459353876, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_Name
+      value: WallLightItem4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536568632369878257, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_Name
+      value: WallLightItem6
+      objectReference: {fileID: 0}
     - target: {fileID: 4799653214140963776, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
       propertyPath: m_RootOrder
@@ -16635,6 +16680,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.298
+      objectReference: {fileID: 0}
+    - target: {fileID: 5203823814333314238, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_Name
+      value: WallLight4
       objectReference: {fileID: 0}
     - target: {fileID: 5260125620149673319, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
@@ -16956,6 +17006,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8130622373124431551, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_Name
+      value: WallLight2
+      objectReference: {fileID: 0}
     - target: {fileID: 8218847730695234578, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -17040,6 +17095,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: -0.00000014901161
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626246884110951246, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_Name
+      value: WallLight5
       objectReference: {fileID: 0}
     - target: {fileID: 8658228598084722514, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
