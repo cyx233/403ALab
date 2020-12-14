@@ -82,12 +82,12 @@ namespace Tsinghua.HCI.IoTVRP
             // }
             if(gestureDetector.currentGesture.name.Equals("TurnUp")) {
                 Debug.Log("Gesture: turnup");
-                SensorTrigger(GestureType.TurnUp);
+                SensorTrigger(GestureType.LeftTurnUp);
             }
             else if(gestureDetector.currentGesture.name.Equals("TurnDown"))
             {
                 Debug.Log("Gesture: turndown");
-                SensorTrigger(GestureType.TurnDown);
+                SensorTrigger(GestureType.LeftTurnDown);
             }
             else if(gestureDetector.currentGesture.name.Equals("ToggleOnOff"))
             {
