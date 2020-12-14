@@ -112,6 +112,7 @@ namespace Tsinghua.HCI.IoTVRP
 
         private Light _light;
         //private GestureType gestureType;
+        [SerializeField]
         private bool leftUp, leftDown, rightUp, rightDown;
         private string lightname;
         private OVRPlayerController player;
@@ -232,7 +233,7 @@ namespace Tsinghua.HCI.IoTVRP
 
         public void GestureControl(GestureEventData gestureEventData)
         {
-            Debug.Log(gestureEventData.GestureType);
+            Debug.Log("light:"+gestureEventData.GestureType);
             switch (gestureEventData.GestureType)
             {
                 case GestureType.ToggleOnOff:
@@ -261,6 +262,7 @@ namespace Tsinghua.HCI.IoTVRP
 
         public void UnsetGestureControl(GestureEventData gestureEventData)
         {
+            Debug.Log("light Un:"+gestureEventData.GestureType);
             switch (gestureEventData.GestureType)
             {
                 case GestureType.LeftTurnUp:

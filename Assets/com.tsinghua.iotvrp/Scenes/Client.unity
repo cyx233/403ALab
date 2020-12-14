@@ -4618,7 +4618,7 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls: []
-  - name: TurnUp
+  - name: RightTurnUp
     fingerDatas:
     - {x: -0.000000016038907, y: -0.000000009220543, z: -0.000000009598258}
     - {x: -0.000000016038907, y: -0.000000009220543, z: -0.000000009598258}
@@ -4647,7 +4647,7 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls: []
-  - name: TurnDown
+  - name: RightTurnDown
     fingerDatas:
     - {x: -0.000000011833895, y: 0.0000000031696588, z: 0.000000022394184}
     - {x: -0.000000011833895, y: 0.0000000031696588, z: 0.000000022394184}
@@ -5707,7 +5707,7 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls: []
-  - name: TurnUp
+  - name: LeftTurnUp
     fingerDatas:
     - {x: 0.000000013527305, y: -0.0000000011511831, z: -0.0000000061357914}
     - {x: 0.000000013527305, y: -0.0000000011511831, z: -0.0000000061357914}
@@ -5736,7 +5736,7 @@ MonoBehaviour:
     onRecognized:
       m_PersistentCalls:
         m_Calls: []
-  - name: TurnDown
+  - name: LeftTurnDown
     fingerDatas:
     - {x: -0.0000000022082012, y: -0.0000000089929895, z: 0.000000013845627}
     - {x: -0.0000000022082012, y: -0.0000000089929895, z: 0.000000013845627}
@@ -11086,7 +11086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16fc8ec26aaede546bf6e2bb890e57c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redRay: {fileID: 365534495}
   camera: {fileID: 1289141818}
 --- !u!114 &2061870977 stripped
 MonoBehaviour:
@@ -13171,7 +13170,7 @@ PrefabInstance:
     - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
       propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
@@ -13191,7 +13190,7 @@ PrefabInstance:
     - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
       propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
@@ -13313,6 +13312,81 @@ PrefabInstance:
       propertyPath: rightGestureDetector
       value: 
       objectReference: {fileID: 865451150}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4484767591003371041}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UnsetGestureControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 4484767591003371045}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: UnsetGestureControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1896522745}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: UnsetGestureControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: m_OnSensorUntriggered.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5323605960113748857, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
       propertyPath: m_StaticEditorFlags
