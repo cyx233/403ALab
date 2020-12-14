@@ -21,13 +21,15 @@ namespace Tsinghua.HCI.IoTVRP
         public bool debugMode = true;
         public int bonesSize;
         public List<OVRBone> fingerBones;
-        private Gesture previousGesture;
+        public Gesture previousGesture;
         public Gesture currentGesture;
 
         // Start is called before the first frame update
         void Start()
         {
             fingerBones = new List<OVRBone>(skeleton.Bones);
+            previousGesture = new Gesture();
+            previousGesture.name = "None";
             currentGesture = new Gesture();
             currentGesture.name = "None";
         }
@@ -38,6 +40,7 @@ namespace Tsinghua.HCI.IoTVRP
             if(debugMode && Input.GetKeyDown(KeyCode.Space)){
                 Save();
             }
+            previousGesture = currentGesture;
             currentGesture = Recognize();
             //bool hasRecognized = !currentGesture.name.Equals("None");
             // Debug.Log("hasRecognized" + currentGesture.name);

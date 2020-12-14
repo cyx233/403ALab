@@ -18,7 +18,10 @@ namespace Tsinghua.HCI.IoTVRP
         [SerializeField]
         [Tooltip("Action performed after sensor is triggered")]
         private GestureEvent m_OnSensorUntriggered;
-        public GestureDetector gestureDetector;
+        public GestureDetector leftGestureDetector;
+        public GestureDetector rightGestureDetector;
+        public GestureEventData leftPreviousGesture = new GestureEventData(GestureType.None);
+        public GestureEventData rightPreviousGesture = new GestureEventData(GestureType.None);
 
         bool _isSensorTriggered = false;
 
@@ -80,22 +83,45 @@ namespace Tsinghua.HCI.IoTVRP
             // {
             //     LeftIndexTipPosition = poseLeftIndexTip.Position;
             // }
-            if(gestureDetector.currentGesture.name.Equals("TurnUp")) {
-                Debug.Log("Gesture: turnup");
-                SensorTrigger(GestureType.TurnUp);
+            if(leftGestureDetector.currentGesture.name.Equals("LeftTurnUp")) {
+                Debug.Log("Gesture: LeftTurnUp");
+                SensorTrigger(GestureType.LeftTurnUp);
+                leftPreviousGesture = new GestureEventData(GestureType.LeftTurnUp);
             }
-            else if(gestureDetector.currentGesture.name.Equals("TurnDown"))
+            if(leftGestureDetector.currentGesture.name.Equals("LeftTurnDown"))
             {
-                Debug.Log("Gesture: turndown");
-                SensorTrigger(GestureType.TurnDown);
+                Debug.Log("Gesture: LeftTurnDown");
+                SensorTrigger(GestureType.LeftTurnDown);
+                leftPreviousGesture = new GestureEventData(GestureType.LeftTurnDown);
             }
-            else if(gestureDetector.currentGesture.name.Equals("ToggleOnOff"))
+            if(leftGestureDetector.currentGesture.name.Equals("ToggleOnOff"))
             {
                 Debug.Log("Gesture: toggle");
                 SensorTrigger(GestureType.ToggleOnOff);
+                leftPreviousGesture = new GestureEventData(GestureType.ToggleOnOff);
             }
-            else if(gestureDetector.currentGesture.name.Equals("None")){
-                SensorUntrigger(GestureType.None);
+            if(leftGestureDetector.currentGesture.name.Equals("None")){
+                SensorUntrigger(leftPreviousGesture.GestureType);
+            }
+            if(rightGestureDetector.currentGesture.name.Equals("RightTurnUp")) {
+                Debug.Log("Gesture: RightTurnUp");
+                SensorTrigger(GestureType.RightTurnUp);
+                rightPreviousGesture = new GestureEventData(GestureType.RightTurnUp);
+            }
+            if(rightGestureDetector.currentGesture.name.Equals("RightTurnDown"))
+            {
+                Debug.Log("Gesture: RightTurnDown");
+                SensorTrigger(GestureType.RightTurnDown);
+                rightPreviousGesture = new GestureEventData(GestureType.RightTurnDown);
+            }
+            if(rightGestureDetector.currentGesture.name.Equals("ToggleOnOff"))
+            {
+                Debug.Log("Gesture: toggle");
+                SensorTrigger(GestureType.ToggleOnOff);
+                rightPreviousGesture = new GestureEventData(GestureType.ToggleOnOff);
+            }
+            if(rightGestureDetector.currentGesture.name.Equals("None")){
+                SensorUntrigger(rightPreviousGesture.GestureType);
             }
         }
     }

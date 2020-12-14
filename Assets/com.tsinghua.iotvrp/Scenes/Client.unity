@@ -4550,6 +4550,12 @@ MonoBehaviour:
         m_Calls: []
   debugMode: 0
   bonesSize: 24
+  previousGesture:
+    name: 
+    fingerDatas: []
+    onRecognized:
+      m_PersistentCalls:
+        m_Calls: []
   currentGesture:
     name: None
     fingerDatas: []
@@ -5633,6 +5639,12 @@ MonoBehaviour:
         m_Calls: []
   debugMode: 0
   bonesSize: 24
+  previousGesture:
+    name: 
+    fingerDatas: []
+    onRecognized:
+      m_PersistentCalls:
+        m_Calls: []
   currentGesture:
     name: None
     fingerDatas: []
@@ -13131,6 +13143,16 @@ PrefabInstance:
       propertyPath: m_OnSensorTriggered.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: leftGestureDetector
+      value: 
+      objectReference: {fileID: 1076088255}
+    - target: {fileID: 5263847916943199703, guid: a9d18bb71333a784f80f9326c6acc6ab,
+        type: 3}
+      propertyPath: rightGestureDetector
+      value: 
+      objectReference: {fileID: 865451150}
     - target: {fileID: 5323605960113748857, guid: a9d18bb71333a784f80f9326c6acc6ab,
         type: 3}
       propertyPath: m_StaticEditorFlags
