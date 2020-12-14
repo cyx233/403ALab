@@ -12,25 +12,64 @@ namespace Tsinghua.HCI.IoTVRP
         Direct, // adjust all the lights at the same pace
         InvDistance, // speed = direct_speed / dist
         ExpDistance, // speed = direct_speed * (1 + 4 * e^{-x})
+        SightExpDistance,
     }
 
     public class LightItem : MonoBehaviour
     {
         class MappingFunctions
         {
-            public static float Direct(float direct_speed, float dist)
+            static float CalcDist(Vector3 v1, Vector3 v2)
+            {
+                float dx = v1.x - v2.x;
+                float dy = v1.y - v2.y;
+                float dz = v1.z - v2.z;
+                return (float)Math.Sqrt(dx * dx + dy * dy + dz * dz);
+            }
+
+            public static float Direct(float direct_speed, Vector3 lightPos, Vector3 targetPos)
             {
                 return direct_speed;
             }
 
-            public static float InvDistance(float direct_speed, float dist)
+            public static float InvDistance(float direct_speed, Vector3 lightPos, Vector3 targetPos)
             {
-                return direct_speed / dist * 7;
+                float dist = CalcDist(lightPos, targetPos);
+                return direct_speed / (1.4f + dist) * 7;
             }
 
-            public static float ExpDistance(float ds, float dist)
+            public static float ExpDistance(float ds, Vector3 lightPos, Vector3 targetPos)
             {
-                return ds * (1 + 4 * (float)Math.Exp(-dist));
+                float dist = CalcDist(lightPos, targetPos);
+                return ds * (5 * (float)Math.Exp(-dist));
+            }
+
+            static float[] discount_factors = new float[RayCastDetector.POINT_NUM];
+            public static void init_discount_factors()
+            {
+                float val = 1f;
+                float sum = 0f;
+                for (int i = discount_factors.Length - 1; i >= 0; i--)
+                {
+                    discount_factors[i] = val;
+                    sum += val;
+                    val *= (float)Math.Exp(-3 * (discount_factors.Length - i) / (float)discount_factors.Length);
+                }
+                for (int i = 0; i < discount_factors.Length; i++)
+                {
+                    discount_factors[i] /= sum;
+                }
+            }
+
+            public static float SightExpDistance(float ds, Vector3 lightPos, Vector3 targetPos)
+            {
+                float ns = 0f;
+                Vector3[] hitpoints = RayCastDetector.HitPoints.ToArray();
+                for (int i = 0; i < hitpoints.Length; i++)
+                {
+                    ns += discount_factors[i] * ExpDistance(ds, lightPos, hitpoints[i]);
+                }
+                return ns;
             }
         }
 
@@ -38,12 +77,13 @@ namespace Tsinghua.HCI.IoTVRP
         static public MappingMode mode = MappingMode.Direct;
         static private int mode_len = Enum.GetNames(typeof(MappingMode)).Length;
 
-        delegate float MappingFunc(float direct_speed, float dist);
+        delegate float MappingFunc(float direct_speed, Vector3 lightPos, Vector3 targetPos);
         static Dictionary<MappingMode, MappingFunc> mappingFuncs = new Dictionary<MappingMode, MappingFunc>()
         {
             {MappingMode.Direct, MappingFunctions.Direct},
             {MappingMode.InvDistance, MappingFunctions.InvDistance},
             {MappingMode.ExpDistance, MappingFunctions.ExpDistance},
+            {MappingMode.SightExpDistance, MappingFunctions.SightExpDistance},
         };
 
         // it takes `speed_in_frames` number of frames to change light intensity from min to max
@@ -74,12 +114,6 @@ namespace Tsinghua.HCI.IoTVRP
 
         public static void ToggleMode()
         {
-            /*
-            int int_mode = System.Convert.ToInt32(mode);
-            int_mode = (int_mode + 1) % mode_len;
-            mode = (MappingMode)Enum.ToObject(typeof(MappingMode), int_mode);
-            */
-
             LightItem[] lights = GameObject.FindObjectsOfType<LightItem>();
             for (int i = 0; i < lights.Length; i++)
             {
@@ -90,6 +124,8 @@ namespace Tsinghua.HCI.IoTVRP
             else if (mode == MappingMode.ExpDistance)
                 mode = MappingMode.InvDistance;
             else if (mode == MappingMode.InvDistance)
+                mode = MappingMode.SightExpDistance;
+            else if (mode == MappingMode.SightExpDistance)
                 mode = MappingMode.Direct;
         }
 
@@ -104,6 +140,8 @@ namespace Tsinghua.HCI.IoTVRP
                     return "Inverse Distance";
                 case MappingMode.ExpDistance:
                     return "Exponential Distance";
+                case MappingMode.SightExpDistance:
+                    return "Sight Exponential Distance";
                 default:
                     return "";
             }
@@ -112,8 +150,7 @@ namespace Tsinghua.HCI.IoTVRP
 
         private Light _light;
         //private GestureType gestureType;
-        [SerializeField]
-        private bool leftUp, leftDown, rightUp, rightDown;
+        //private bool leftUp, leftDown, rightUp, rightDown;
         private string lightname;
         private OVRPlayerController player;
         private long THRESH = 60;
@@ -124,53 +161,35 @@ namespace Tsinghua.HCI.IoTVRP
         {
             _light = GetComponent<Light>();
             player = GameObject.FindObjectOfType<OVRPlayerController>();
-            //gestureType = GestureType.None;
+            /*
             leftUp = false;
             leftDown = false;
             rightUp = false;
             rightDown = false;
+            */
             lightname = gameObject.name;
             direct_speed = (maxIntensity[lightname] - minIntensity[lightname]) / speed_in_frames;
             triggered_frame = THRESH;
+            MappingFunctions.init_discount_factors();
         }
 
         // Update is called once per frame
         void Update()
         {
             /*
-            switch ()
-            {
-                case GestureType.LeftTurnUp:
-                    //if (_light.intensity < maxIntensity[lightname])
-                    //   _light.intensity += mappingFuncs[mode](direct_speed, GetDistanceFromPlayer());
-                    IncreaseIntensity(mappingFuncs[mode](direct_speed, GetDistanceFromPlayer()));
-                    break;
-                case GestureType.TurnDown:
-                    DecreaseIntensity(mappingFuncs[mode](direct_speed, GetDistanceFromPlayer()));
-                    //if (_light.intensity > minIntensity[lightname])
-                     //   _light.intensity -= mappingFuncs[mode](direct_speed, GetDistanceFromPlayer());
-                    break;
-            }
-            */
             if (leftUp)
-                IncreaseIntensity(mappingFuncs[mode](direct_speed, GetDistanceFromPlayer()));
+                IncreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
             else if (leftDown)
-                DecreaseIntensity(mappingFuncs[mode](direct_speed, GetDistanceFromPlayer()));
+                DecreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
             if (rightUp)
-                IncreaseIntensity(mappingFuncs[mode](direct_speed, GetDistanceFromPlayer()));
+                IncreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
             else if (rightDown)
-                DecreaseIntensity(mappingFuncs[mode](direct_speed, GetDistanceFromPlayer()));
+                DecreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
+            */
 
             triggered_frame += 1;
         }
 
-        float GetDistanceFromPlayer()
-        {
-            float dx = player.transform.position.x - _light.transform.position.x;
-            float dy = player.transform.position.y - _light.transform.position.y;
-            float dz = player.transform.position.z - _light.transform.position.z;
-            return (float)Math.Sqrt(dx * dx + dy * dy + dz * dz);
-        }
 
         public void SetColor(Color newColor)
         {
@@ -243,25 +262,21 @@ namespace Tsinghua.HCI.IoTVRP
                         Toggle();
                         triggered_frame = 0;
                     }
-                    //Toggle();
                     break;
                 case GestureType.LeftTurnUp:
-                    leftUp = true;
+                case GestureType.RightTurnUp:
+                    IncreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
                     break;
                 case GestureType.LeftTurnDown:
-                    leftDown = true;
-                    break;
-                case GestureType.RightTurnUp:
-                    rightUp = true;
-                    break;
                 case GestureType.RightTurnDown:
-                    rightDown = true;
+                    DecreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
                     break;
             }
         }
 
         public void UnsetGestureControl(GestureEventData gestureEventData)
         {
+            /*
             Debug.Log("light Un:"+gestureEventData.GestureType);
             switch (gestureEventData.GestureType)
             {
@@ -278,6 +293,7 @@ namespace Tsinghua.HCI.IoTVRP
                     rightDown = false;
                     break;
             }
+            */
         }
     }
 
