@@ -5,7 +5,7 @@ using UnityEngine;
 public class RayCastDetector : MonoBehaviour
 {
     private Ray camerRay;
-    private int POINT_NUM=100;
+    public static int POINT_NUM=100;
     [SerializeField]
     private new Camera camera;
     static public Queue<Vector3>HitPoints;
