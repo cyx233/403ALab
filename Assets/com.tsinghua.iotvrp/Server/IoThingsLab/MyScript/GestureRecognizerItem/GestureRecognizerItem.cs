@@ -18,9 +18,10 @@ namespace Tsinghua.HCI.IoTVRP
         [SerializeField]
         [Tooltip("Action performed after sensor is triggered")]
         private GestureEvent m_OnSensorUntriggered;
-        public GestureDetector gestureDetector;
-
-        bool _isSensorTriggered = false;
+        public GestureDetector leftGestureDetector;
+        public GestureDetector rightGestureDetector;
+        public GestureEventData leftPreviousGesture = new GestureEventData(GestureType.None);
+        public GestureEventData rightPreviousGesture = new GestureEventData(GestureType.None);
 
         // Start is called before the first frame update
         void Start()
@@ -32,39 +33,10 @@ namespace Tsinghua.HCI.IoTVRP
         }
 
 
-        void SensorTriggered(GestureType type)
+        void SensorTrigger(GestureType type)
         {
-            _isSensorTriggered = true;
-            GestureEventData temp = new GestureEventData(type);
-            Debug.Log("Data@Re:" + temp.GestureType);
-             m_OnSensorTriggered?.Invoke(temp);
+             m_OnSensorTriggered?.Invoke(new GestureEventData(type));
         }
-
-        void SensorUntriggered(GestureType type)
-        {
-            _isSensorTriggered = false;
-            m_OnSensorUntriggered?.Invoke(new GestureEventData(type));
-        }
-
-
-        //Calculate value here
-        public void SensorTrigger(GestureType type)
-        {
-            if (!_isSensorTriggered)
-            {
-                SensorTriggered(type);
-                Debug.Log("AtReco:" + type);
-            }
-        }
-        public void SensorUntrigger(GestureType type)
-        {
-            if (_isSensorTriggered)
-            {
-                SensorUntriggered(type);
-                Debug.Log("AtRecoUn:" + type);
-            }
-        }
-
 
         // Update is called once per frame
         void Update()
@@ -80,22 +52,39 @@ namespace Tsinghua.HCI.IoTVRP
             // {
             //     LeftIndexTipPosition = poseLeftIndexTip.Position;
             // }
-            if(gestureDetector.currentGesture.name.Equals("TurnUp")) {
-                Debug.Log("Gesture: turnup");
+            if(leftGestureDetector.currentGesture.name.Equals("LeftTurnUp")) {
+                //Debug.Log("Gesture: LeftTurnUp");
                 SensorTrigger(GestureType.LeftTurnUp);
+                leftPreviousGesture = new GestureEventData(GestureType.LeftTurnUp);
             }
-            else if(gestureDetector.currentGesture.name.Equals("TurnDown"))
+            if(leftGestureDetector.currentGesture.name.Equals("LeftTurnDown"))
             {
-                Debug.Log("Gesture: turndown");
+                //Debug.Log("Gesture: LeftTurnDown");
                 SensorTrigger(GestureType.LeftTurnDown);
+                leftPreviousGesture = new GestureEventData(GestureType.LeftTurnDown);
             }
-            else if(gestureDetector.currentGesture.name.Equals("ToggleOnOff"))
+            if(leftGestureDetector.currentGesture.name.Equals("ToggleOnOff"))
             {
-                Debug.Log("Gesture: toggle");
+                //Debug.Log("Gesture: toggle");
                 SensorTrigger(GestureType.ToggleOnOff);
+                leftPreviousGesture = new GestureEventData(GestureType.ToggleOnOff);
             }
-            else if(gestureDetector.currentGesture.name.Equals("None")){
-                SensorUntrigger(GestureType.None);
+            if(rightGestureDetector.currentGesture.name.Equals("RightTurnUp")) {
+                //Debug.Log("Gesture: RightTurnUp");
+                SensorTrigger(GestureType.RightTurnUp);
+                rightPreviousGesture = new GestureEventData(GestureType.RightTurnUp);
+            }
+            if(rightGestureDetector.currentGesture.name.Equals("RightTurnDown"))
+            {
+                //Debug.Log("Gesture: RightTurnDown");
+                SensorTrigger(GestureType.RightTurnDown);
+                rightPreviousGesture = new GestureEventData(GestureType.RightTurnDown);
+            }
+            if(rightGestureDetector.currentGesture.name.Equals("ToggleOnOff"))
+            {
+                //Debug.Log("Gesture: toggle");
+                SensorTrigger(GestureType.ToggleOnOff);
+                rightPreviousGesture = new GestureEventData(GestureType.ToggleOnOff);
             }
         }
     }

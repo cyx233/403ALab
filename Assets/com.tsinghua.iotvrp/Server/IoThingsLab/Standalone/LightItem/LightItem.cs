@@ -49,7 +49,7 @@ namespace Tsinghua.HCI.IoTVRP
             {
                 float val = 1f;
                 float sum = 0f;
-                for (int i = discount_factors.Length - 1; i >= 0; i++)
+                for (int i = discount_factors.Length - 1; i >= 0; i--)
                 {
                     discount_factors[i] = val;
                     sum += val;
@@ -234,9 +234,7 @@ namespace Tsinghua.HCI.IoTVRP
 
         public void GestureControl(GestureEventData gestureEventData)
         {
-            Debug.Log(gestureEventData.GestureType);
-
-
+            Debug.Log("light:"+gestureEventData.GestureType);
             switch (gestureEventData.GestureType)
             {
                 case GestureType.ToggleOnOff:
@@ -261,6 +259,7 @@ namespace Tsinghua.HCI.IoTVRP
         public void UnsetGestureControl(GestureEventData gestureEventData)
         {
             /*
+            Debug.Log("light Un:"+gestureEventData.GestureType);
             switch (gestureEventData.GestureType)
             {
                 case GestureType.LeftTurnUp:
