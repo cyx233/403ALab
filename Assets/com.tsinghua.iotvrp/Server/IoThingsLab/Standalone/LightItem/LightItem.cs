@@ -150,7 +150,7 @@ namespace Tsinghua.HCI.IoTVRP
 
         private Light _light;
         //private GestureType gestureType;
-        private bool leftUp, leftDown, rightUp, rightDown;
+        //private bool leftUp, leftDown, rightUp, rightDown;
         private string lightname;
         private OVRPlayerController player;
         private long THRESH = 60;
@@ -161,10 +161,12 @@ namespace Tsinghua.HCI.IoTVRP
         {
             _light = GetComponent<Light>();
             player = GameObject.FindObjectOfType<OVRPlayerController>();
+            /*
             leftUp = false;
             leftDown = false;
             rightUp = false;
             rightDown = false;
+            */
             lightname = gameObject.name;
             direct_speed = (maxIntensity[lightname] - minIntensity[lightname]) / speed_in_frames;
             triggered_frame = THRESH;
@@ -174,7 +176,7 @@ namespace Tsinghua.HCI.IoTVRP
         // Update is called once per frame
         void Update()
         {
-                float dx = player.transform.position.x - _light.transform.position.x;
+            /*
             if (leftUp)
                 IncreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
             else if (leftDown)
@@ -183,6 +185,7 @@ namespace Tsinghua.HCI.IoTVRP
                 IncreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
             else if (rightDown)
                 DecreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
+            */
 
             triggered_frame += 1;
         }
@@ -250,6 +253,8 @@ namespace Tsinghua.HCI.IoTVRP
         public void GestureControl(GestureEventData gestureEventData)
         {
             Debug.Log(gestureEventData.GestureType);
+
+
             switch (gestureEventData.GestureType)
             {
                 case GestureType.ToggleOnOff:
@@ -261,22 +266,19 @@ namespace Tsinghua.HCI.IoTVRP
                     }
                     break;
                 case GestureType.LeftTurnUp:
-                    leftUp = true;
+                case GestureType.RightTurnUp:
+                    IncreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
                     break;
                 case GestureType.LeftTurnDown:
-                    leftDown = true;
-                    break;
-                case GestureType.RightTurnUp:
-                    rightUp = true;
-                    break;
                 case GestureType.RightTurnDown:
-                    rightDown = true;
+                    DecreaseIntensity(mappingFuncs[mode](direct_speed, _light.transform.position, player.transform.position));
                     break;
             }
         }
 
         public void UnsetGestureControl(GestureEventData gestureEventData)
         {
+            /*
             switch (gestureEventData.GestureType)
             {
                 case GestureType.LeftTurnUp:
@@ -292,6 +294,7 @@ namespace Tsinghua.HCI.IoTVRP
                     rightDown = false;
                     break;
             }
+            */
         }
     }
 
