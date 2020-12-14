@@ -95,21 +95,36 @@ namespace Tsinghua.HCI.IoTVRP
             { "DeskLightItem", 4 },
             { "MainLightItem", 4 },
             { "ReadingLightItem", 3 },
-            { "NightLightItem", 5 },
+            { "WallLightItem1", 3 },
+            { "WallLightItem2", 3 },
+            { "WallLightItem3", 3 },
+            { "WallLightItem4", 3 },
+            { "WallLightItem5", 3 },
+            { "WallLightItem6", 3 },
         };
         static Dictionary<string, float> minIntensity = new Dictionary<string, float>()
         {
             { "DeskLightItem", 1 },
             { "MainLightItem", 1 },
             { "ReadingLightItem", 1 },
-            { "NightLightItem", 5 },
+            { "WallLightItem1", 1 },
+            { "WallLightItem2", 1 },
+            { "WallLightItem3", 1 },
+            { "WallLightItem4", 1 },
+            { "WallLightItem5", 1 },
+            { "WallLightItem6", 1 },
         };
         static Dictionary<string, float> maxIntensity = new Dictionary<string, float>()
         {
-            { "DeskLightItem", 10 },
-            { "MainLightItem", 10 },
-            { "ReadingLightItem", 10 },
-            { "NightLightItem", 5 },
+            { "DeskLightItem", 15 },
+            { "MainLightItem", 15 },
+            { "ReadingLightItem", 15 },
+            { "WallLightItem1", 15 },
+            { "WallLightItem2", 15 },
+            { "WallLightItem3", 15 },
+            { "WallLightItem4", 15 },
+            { "WallLightItem5", 15 },
+            { "WallLightItem6", 15 },
         };
 
         public static void ToggleMode()
