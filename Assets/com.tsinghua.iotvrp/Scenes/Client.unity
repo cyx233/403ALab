@@ -5510,7 +5510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d112538aed373dd439260c61c549e8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshold: 0.05
+  threshold: 0.065
   skeleton: {fileID: 2061870973}
   gestures:
   - name: ToggleOnOff
@@ -7152,7 +7152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d112538aed373dd439260c61c549e8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshold: 0.05
+  threshold: 0.065
   skeleton: {fileID: 2061870972}
   gestures:
   - name: ToggleOnOff
