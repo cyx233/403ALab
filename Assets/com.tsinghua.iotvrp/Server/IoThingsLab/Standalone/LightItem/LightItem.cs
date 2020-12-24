@@ -92,9 +92,9 @@ namespace Tsinghua.HCI.IoTVRP
 
         static Dictionary<string, float> defaultIntensity = new Dictionary<string, float>()
         {
-            { "DeskLightItem", 1 },
+            { "DeskLightItem", 0.5f },
             { "MainLightItem", 1 },
-            { "ReadingLightItem", 1 },
+            { "ReadingLightItem", 0.5f },
             { "WallLightItem1", 0 },
             { "WallLightItem2", 0 },
             { "WallLightItem3", 0 },
@@ -104,15 +104,15 @@ namespace Tsinghua.HCI.IoTVRP
         };
         static Dictionary<string, float> minIntensity = new Dictionary<string, float>()
         {
-            { "DeskLightItem", 0.5f },
-            { "MainLightItem", 0.5f },
-            { "ReadingLightItem", 0.5f },
-            { "WallLightItem1", 0.5f },
-            { "WallLightItem2", 0.5f },
-            { "WallLightItem3", 0.5f },
-            { "WallLightItem4", 0.5f },
-            { "WallLightItem5", 0.5f },
-            { "WallLightItem6", 0.5f },
+            { "DeskLightItem", 0f },
+            { "MainLightItem", 0f },
+            { "ReadingLightItem", 0f },
+            { "WallLightItem1", 0f },
+            { "WallLightItem2", 0f },
+            { "WallLightItem3", 0f },
+            { "WallLightItem4", 0f },
+            { "WallLightItem5", 0f },
+            { "WallLightItem6", 0f },
         };
         static Dictionary<string, float> maxIntensity = new Dictionary<string, float>()
         {
