@@ -50,6 +50,13 @@ namespace Tsinghua.HCI.IoTVRP
 				modetext.text = LightItem.GetMode();
 			}
 		}
-	}
+		public void Reset(OculusSampleFramework.InteractableStateArgs obj)
+		{
+			if (obj.NewInteractableState == OculusSampleFramework.InteractableState.ActionState)
+			{
+				LightItem.ResetIntensity();
+			}
+		}
+    }
 }
 
