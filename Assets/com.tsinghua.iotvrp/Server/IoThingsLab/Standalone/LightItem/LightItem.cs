@@ -129,19 +129,24 @@ namespace Tsinghua.HCI.IoTVRP
 
         public static void ToggleMode()
         {
+            ResetIntensity();
+            if (mode == MappingMode.Direct)
+                mode = MappingMode.InvDistance;
+            else if (mode == MappingMode.InvDistance)
+                mode = MappingMode.ExpDistance;
+            else if (mode == MappingMode.ExpDistance)
+                mode = MappingMode.SightExpDistance;
+            else if (mode == MappingMode.SightExpDistance)
+                mode = MappingMode.Direct;
+        }
+
+        public static void ResetIntensity()
+        {
             LightItem[] lights = GameObject.FindObjectsOfType<LightItem>();
             for (int i = 0; i < lights.Length; i++)
             {
                 lights[i].SetIntensity(defaultIntensity[lights[i].GetLightName()]);
             }
-            if (mode == MappingMode.Direct)
-                mode = MappingMode.ExpDistance;
-            else if (mode == MappingMode.ExpDistance)
-                mode = MappingMode.InvDistance;
-            else if (mode == MappingMode.InvDistance)
-                mode = MappingMode.SightExpDistance;
-            else if (mode == MappingMode.SightExpDistance)
-                mode = MappingMode.Direct;
         }
 
         public static string GetMode()
@@ -149,13 +154,13 @@ namespace Tsinghua.HCI.IoTVRP
             switch (mode)
             {
                 case MappingMode.Direct:
-                    return "Direct";
+                    return "Mode 1 (Direct)";
                 case MappingMode.InvDistance:
-                    return "Inverse Distance";
+                    return "Mode 2 (ID)";
                 case MappingMode.ExpDistance:
-                    return "Exponential Distance";
+                    return "Mode 3 (ED)";
                 case MappingMode.SightExpDistance:
-                    return "Sight Exponential Distance";
+                    return "Mode 4 (SED)";
                 default:
                     return "";
             }
@@ -164,7 +169,7 @@ namespace Tsinghua.HCI.IoTVRP
 
         private Light _light;
         private string lightname;
-        private OVRPlayerController player;
+        private GameObject player;
         private long THRESH = 60;
         long triggered_frame;
 
@@ -172,7 +177,7 @@ namespace Tsinghua.HCI.IoTVRP
         void Start()
         {
             _light = GetComponent<Light>();
-            player = GameObject.FindObjectOfType<OVRPlayerController>();
+            player = GameObject.Find("CenterEyeAnchor");
             lightname = gameObject.name;
             SetIntensity(defaultIntensity[lightname]);
             _light.enabled = false;
@@ -185,6 +190,13 @@ namespace Tsinghua.HCI.IoTVRP
         void Update()
         {
             triggered_frame += 1;
+            /*
+            Debug.Log("camera:" + player.transform.position);
+            OVRPlayerController p = GameObject.FindObjectOfType<OVRPlayerController>();
+            Debug.Log("controller: " + p.transform.position);
+            GameObject g = GameObject.Find("CenterEyeAnchor");
+            Debug.Log("left eye anchor: " + g.transform.position);
+            */
         }
 
 
