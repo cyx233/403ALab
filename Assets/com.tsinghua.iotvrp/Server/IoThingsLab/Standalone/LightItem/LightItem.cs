@@ -92,39 +92,39 @@ namespace Tsinghua.HCI.IoTVRP
 
         static Dictionary<string, float> defaultIntensity = new Dictionary<string, float>()
         {
-            { "DeskLightItem", 4 },
-            { "MainLightItem", 4 },
-            { "ReadingLightItem", 3 },
-            { "WallLightItem1", 3 },
-            { "WallLightItem2", 3 },
-            { "WallLightItem3", 3 },
-            { "WallLightItem4", 3 },
-            { "WallLightItem5", 3 },
-            { "WallLightItem6", 3 },
-        };
-        static Dictionary<string, float> minIntensity = new Dictionary<string, float>()
-        {
             { "DeskLightItem", 1 },
             { "MainLightItem", 1 },
             { "ReadingLightItem", 1 },
-            { "WallLightItem1", 1 },
-            { "WallLightItem2", 1 },
-            { "WallLightItem3", 1 },
-            { "WallLightItem4", 1 },
-            { "WallLightItem5", 1 },
-            { "WallLightItem6", 1 },
+            { "WallLightItem1", 0 },
+            { "WallLightItem2", 0 },
+            { "WallLightItem3", 0 },
+            { "WallLightItem4", 0 },
+            { "WallLightItem5", 0 },
+            { "WallLightItem6", 0 },
+        };
+        static Dictionary<string, float> minIntensity = new Dictionary<string, float>()
+        {
+            { "DeskLightItem", 0.5f },
+            { "MainLightItem", 0.5f },
+            { "ReadingLightItem", 0.5f },
+            { "WallLightItem1", 0.5f },
+            { "WallLightItem2", 0.5f },
+            { "WallLightItem3", 0.5f },
+            { "WallLightItem4", 0.5f },
+            { "WallLightItem5", 0.5f },
+            { "WallLightItem6", 0.5f },
         };
         static Dictionary<string, float> maxIntensity = new Dictionary<string, float>()
         {
-            { "DeskLightItem", 15 },
-            { "MainLightItem", 15 },
-            { "ReadingLightItem", 15 },
-            { "WallLightItem1", 15 },
-            { "WallLightItem2", 15 },
-            { "WallLightItem3", 15 },
-            { "WallLightItem4", 15 },
-            { "WallLightItem5", 15 },
-            { "WallLightItem6", 15 },
+            { "DeskLightItem", 8 },
+            { "MainLightItem", 14 },
+            { "ReadingLightItem", 8 },
+            { "WallLightItem1", 8 },
+            { "WallLightItem2", 8 },
+            { "WallLightItem3", 8 },
+            { "WallLightItem4", 8 },
+            { "WallLightItem5", 8 },
+            { "WallLightItem6", 8 },
         };
 
         public static void ToggleMode()
@@ -271,27 +271,7 @@ namespace Tsinghua.HCI.IoTVRP
             }
         }
 
-        public void UnsetGestureControl(GestureEventData gestureEventData)
-        {
-            /*
-            Debug.Log("light Un:"+gestureEventData.GestureType);
-            switch (gestureEventData.GestureType)
-            {
-                case GestureType.LeftTurnUp:
-                    leftUp = false;
-                    break;
-                case GestureType.LeftTurnDown:
-                    leftDown = false;
-                    break;
-                case GestureType.RightTurnUp:
-                    rightUp = false;
-                    break;
-                case GestureType.RightTurnDown:
-                    rightDown = false;
-                    break;
-            }
-            */
-        }
+        public void UnsetGestureControl(GestureEventData gestureEventData) { }
     }
 
 }
