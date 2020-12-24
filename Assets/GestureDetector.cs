@@ -74,11 +74,16 @@ namespace Tsinghua.HCI.IoTVRP
             foreach(var gesture in gestures){
                 float sumDistance = 0;
                 bool isDiscarded = false;
+                double curth = threshold;
+                if (gesture.name.Equals("ToggleOnOff"))
+                {
+                    curth = 0.4 * curth;
+                }
                 
                 for(int i = 0; i < fingerBones.Count; i++){
                     Vector3 currentData = skeleton.transform.InverseTransformPoint(fingerBones[i].Transform.position);
                     float distance = Vector3.Distance(currentData, gesture.fingerDatas[i]);
-                    if(distance > threshold){
+                    if(distance > curth){
                         isDiscarded = true;
                         break;
                     }
