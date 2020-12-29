@@ -35,10 +35,10 @@
 
 - 开关灯与亮度调节
 
-  <video src="vid/1.mp4"></video>
+  ![1](README.assets/1.gif)
 
 
 
 - 视线触发调节
 
-  <video src="vid/4.mp4"></video>
+  ![2](README.assets/2.gif)
