@@ -7,6 +7,7 @@ namespace Tsinghua.HCI.IoTVRP
 	{
 		[SerializeField] private LightItem _lightitem = null;
 		[SerializeField] private TMPro.TextMeshPro modetext = null;
+		[SerializeField] private TMPro.TextMeshPro modetext2 = null;
 		[SerializeField] private float increase;
 		[SerializeField] private float decrease;
 
@@ -15,10 +16,11 @@ namespace Tsinghua.HCI.IoTVRP
             if (modetext)
             {
 				modetext.text = LightItem.GetMode();
+				modetext2.text = LightItem.GetMode();
 			}
 		}
 
-		private void Awake()
+        private void Awake()
 		{
 		}
 		public void Toggle(OculusSampleFramework.InteractableStateArgs obj)
@@ -46,8 +48,9 @@ namespace Tsinghua.HCI.IoTVRP
 		{
 			if (obj.NewInteractableState == OculusSampleFramework.InteractableState.ActionState)
 			{
-				LightItem.ToggleMode();
+                    LightItem.ToggleMode();
 				modetext.text = LightItem.GetMode();
+				modetext2.text = LightItem.GetMode();
 			}
 		}
 		public void Reset(OculusSampleFramework.InteractableStateArgs obj)
