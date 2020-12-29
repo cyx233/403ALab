@@ -1,19 +1,44 @@
-# MRTK-Quest-Sample
+## 人机交互课程项目：要有光
 
-Sample project for setting up with [MRTK-Quest](https://github.com/provencher/MRTK-Quest). Used only for educational purposes.
 
-**As of [MRTK 2.5](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.5.0/Documentation/ReleaseNotes.html), Oculus platforms are officially supported, leveraging the code that powers MRTK-Quest.**
 
-Some users seem to have issues with getting MRTK and the Oculus integration properly imported into their projects.
+### 研究问题
 
-As such, this repo serves as an example setup for the official MRTK Oculus integration, using examples from MRTK-Quest. MRTK-Quest 1.2 is not a part of this project.
+智能家居场景的统一灯光控制。
 
-Further, to make this easier for people who struggle with Git to download, the repository **does not** use submodules, symlinks or git lfs.
+未来智能家居场景中，可能有很多个灯光设备，用户如何统一调整各个设备，使场景获得舒适的光照。
 
-Current setup:
-- [MRTK](https://github.com/microsoft/MixedRealityToolkit-Unity) V2.5.1
-- [Oculus Integration](https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022) v20.1
-- Unity 2019.4.12f1
 
-Note:
-- While developping with this sample, you may have to run this cript below, which will bind the Oculus prefab references to the OculusXRSDKDeviceManagerProfile  ![Install Oculus](https://user-images.githubusercontent.com/7420990/97363151-81ef0700-1878-11eb-9b49-0dc26e120a79.png)
+
+### 依赖
+
+- Unity 2019.4.15f1
+- MRTK V.2.5.1
+- IoThingsLab v0.5
+
+
+
+### 项目结构
+
+- 构建了一个场景，位于 `Assets/com.tsinghua.iotvrp/Scenes/Client.unity`。场景含有若干光源，以及书桌、电视等物体，用于测试灯光调节算法。
+- 代码均位于 `Assets/com.tsinghua.iotvrp/Server/IoThingsLab/` 文件夹下，其中：
+  - 手势识别的方法位于 `MyScript/GestureRecognizerItem/` 文件夹下。其中 `GestureEventData.cs` 定义了手势事件的数据结构，`GestureRecognizerItem.cs`  进行手势识别。
+- `MyScript/Controller/Controller.cs` 负责转发手势和按钮事件给光源。
+- `MyScript/RayCast/RayCastDetector.cs` 计算并保存与视线相交的物体位置，用于视线调节
+- `Standalone/LightItem/LightItem.cs` 实现了灯光的各种调节方法
+
+
+
+
+
+### 使用示例
+
+- 开关灯与亮度调节
+
+  <video src="vid/1.mp4"></video>
+
+
+
+- 视线触发调节
+
+  <video src="vid/4.mp4"></video>
